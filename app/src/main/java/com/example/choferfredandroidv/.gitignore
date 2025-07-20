@@ -1,0 +1,26 @@
+# Arquivos padrão para projetos Android
+*.iml
+.gradle
+.idea
+/local.properties
+/.settings/
+/.vscode/
+/build
+/captures
+.externalNativeBuild
+.cxx
+*.keystore
+*.jks
+
+# Arquivos gerados
+.DS_Store
+*.apk
+*.aar
+*.ap_
+*.aab
+
+# Logs
+*.log
+
+# Arquivos de configuração específicos
+google-services.json
