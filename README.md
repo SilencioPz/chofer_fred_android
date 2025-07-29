@@ -37,7 +37,7 @@ json
   "parse_mode": "Markdown"
 }
 
-2. Google Maps API
+### **2. Google Maps API**
 
     Cálculo de rotas e exibição no app:
 
