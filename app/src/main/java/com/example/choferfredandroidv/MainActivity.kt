@@ -80,6 +80,7 @@ import androidx.compose.material3.ButtonDefaults
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
+import com.example.choferfredandroidv.controller.GeoHelper
 
 class MainActivity : ComponentActivity() {
     @SuppressLint("CoroutineCreationDuringComposition")
@@ -235,13 +236,6 @@ class MainActivity : ComponentActivity() {
                     origem = state.origem,
                     destino = state.destino,
                     context = context
-                )
-
-                Spacer(modifier = Modifier.height(16.dp))
-
-                CaixaChoferSection(
-                    mensagemChofer = state.mensagemChofer,
-                    onMensagemChange = { viewModel.updateMensagemChofer(it) }
                 )
 
                 Spacer(modifier = Modifier.height(16.dp))
@@ -417,36 +411,7 @@ class MainActivity : ComponentActivity() {
             }
         }
     }
-
-    @Composable
-    private fun CaixaChoferSection(
-        mensagemChofer: String,
-        onMensagemChange: (String) -> Unit
-    ) {
-        Card(
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(horizontal = 16.dp),
-            elevation = CardDefaults.cardElevation(defaultElevation = 4.dp)
-        ) {
-            Column(modifier = Modifier.padding(16.dp)) {
-                Text(
-                    text = "Mensagem do Chofer",
-                    style = MaterialTheme.typography.titleMedium,
-                    modifier = Modifier.padding(bottom = 8.dp)
-                )
-
-                OutlinedTextField(
-                    value = mensagemChofer,
-                    onValueChange = onMensagemChange,
-                    label = { Text("Digite sua mensagem") },
-                    modifier = Modifier.fillMaxWidth(),
-                    maxLines = 3
-                )
-            }
-        }
-    }
-
+    
     @Composable
     private fun DetalhesViagemSection(
         distancia: String,
@@ -530,10 +495,6 @@ class MainActivity : ComponentActivity() {
             _uiState.update { it.copy(valor = valor) }
         }
 
-        fun updateMensagemChofer(mensagem: String) {
-            _uiState.update { it.copy(mensagemChofer = mensagem) }
-        }
-
         fun updateObservacoes(observacoes: String) {
             _uiState.update { it.copy(observacoes = observacoes) }
         }
@@ -564,7 +525,6 @@ class MainActivity : ComponentActivity() {
                 💰 *Valor:* R$ ${state.valor}
                 🚗 *Distância:* ${state.distancia}
                 ⏱ *Tempo estimado:* ${state.tempoEstimado}
-                📝 *Mensagem do chofer:* ${state.mensagemChofer}
                 ℹ️ *Observações:* ${state.observacoes}
             """.trimIndent()
 
@@ -589,7 +549,6 @@ class MainActivity : ComponentActivity() {
         val destino: String = "",
         val origem: String = "",
         val valor: String = "",
-        val mensagemChofer: String = "",
         val distancia: String = "Não calculada",
         val tempoEstimado: String = "Não calculado",
         val observacoes: String = "",

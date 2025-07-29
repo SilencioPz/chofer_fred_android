@@ -5,7 +5,6 @@ import androidx.annotation.RequiresApi
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.choferfredandroidv.model.AgendamentoDTO
-import com.example.choferfredandroidv.model.Rota
 import com.example.choferfredandroidv.service.*
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow

@@ -67,6 +67,7 @@ android {
     }
 
     lint {
+        disable += "NullSafeMutableLiveData"
         warningsAsErrors = false
         disable.add("BooleanPropertyPrefix")
         abortOnError = false
@@ -184,6 +185,9 @@ dependencies {
 
     // Logging
     implementation("com.jakewharton.timber:timber:5.0.1")
+
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.7.0")
+    implementation("org.jetbrains.kotlin:kotlin-stdlib:1.9.22")
 
     // Test dependencies
     testImplementation(libs.junit)
