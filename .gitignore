@@ -22,3 +22,6 @@ build/
 local.properties
 # Google Services (não deve ser commitado)
 app/google-services.json
+/app/release/
+*.apk
+*.dm

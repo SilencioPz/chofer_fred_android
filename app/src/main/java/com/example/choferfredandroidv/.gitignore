@@ -18,6 +18,10 @@
 *.aar
 *.ap_
 *.aab
+/app/release/
+/app/debug/
+/build/
+/outputs/
 
 # Logs
 *.log
